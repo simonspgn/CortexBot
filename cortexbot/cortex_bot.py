@@ -2,7 +2,7 @@
 
 # Cortex Bot for Mattermost Integration
 # Simon Spangenberg
-# 20/06/2019
+# 21/06/2019
 
 import json
 import cgi, cgitb
