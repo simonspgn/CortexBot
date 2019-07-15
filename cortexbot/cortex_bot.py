@@ -5,7 +5,7 @@
 # 21/06/2019
 
 import json
-import cgi, cgitb
+import cgi
 import time
 import subprocess
 from cortex4py.api import Api
