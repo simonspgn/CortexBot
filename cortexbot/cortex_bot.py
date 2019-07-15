@@ -15,11 +15,11 @@ from cortex4py.models import Organization
 # global variables
 
 # Change API and TOKEN
-api = Api('<CORTEX_INSTANCE_URL>,<CORTEX_USER_API_KEY>)
+api = Api("<CORTEX_INSTANCE_URL>","<CORTEX_USER_API_KEY>")
 # Link of the Cortex Instance
-link = <CORTEX_INSTANCE_URL>
+link = "<CORTEX_INSTANCE_URL>"
 # Input the MATTERMOST TOKEN
-token = <MATTERMOST TOKEN>
+token = "<MATTERMOST TOKEN>"
 data_type_ls=["domain","ip","url","fqdn","uri_path","user-agent","hash","email","mail","mail_subject","registry","regexp","other","filename"]
 # So far, cortex can only be run through mattermost with the following 4 data types.
 run_ls = ["domain","ip","url","hash"]
