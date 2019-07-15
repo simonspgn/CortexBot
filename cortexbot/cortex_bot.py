@@ -12,8 +12,6 @@ from cortex4py.api import Api
 from cortex4py.query import *
 from cortex4py.models import Organization
 
-# global variables
-
 # Change API and TOKEN
 api = Api("<CORTEX_INSTANCE_URL>","<CORTEX_USER_API_KEY>")
 # Link of the Cortex Instance
