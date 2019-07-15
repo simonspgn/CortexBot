@@ -23,7 +23,7 @@ All this from your Mattermost instance!
 
 # Set Up
 
-For the correct set up of Cortex Bot, it is crucial that httpd is installed and running. The scripts are written in python3 and communicate with Cortex instances via cortex4py. In order to execute the scripts from cgi, the python Apache Server module mod_wsgi is required. This will provide a WSGI inteface for Python and and allows the integration with cgi. Both cortex_bot.py and cortex_bot_helper.py should be placed in cgi-bin folder under /var/www/cgi-bin. Note that cortex_bot.py will need execute privileges. Once the aforementioned configurations and installations are done, proceed by placing both cortex_bot.py and cortex_bot_helper.py in the /var/www/cgi-bin directory. Note that cortex_bot.py will need execute privileges.
+For the correct set up of Cortex Bot, it is crucial that httpd is installed and running. The scripts are written in python3 and communicate with Cortex instances via cortex4py. In order to execute the scripts from cgi, the python Apache Server module mod_wsgi is required. This will provide a WSGI inteface for Python and and allows the integration with cgi. Both cortex_bot.py and cortex_bot_helper.py should be placed in cgi-bin directory under /var/www/cgi-bin. Note that cortex_bot.py will need execute privileges. Once the aforementioned configurations and installations are done, proceed by placing both cortex_bot.py and cortex_bot_helper.py in the /var/www/cgi-bin directory. Note that cortex_bot.py will need execute privileges.
 
 
 
