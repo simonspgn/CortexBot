@@ -1,2 +1,2 @@
 # Usage
-![](../images/cortexBotGraph.png)
+![](images/cortexBotGraph.png)
