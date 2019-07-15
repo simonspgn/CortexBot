@@ -14,7 +14,7 @@ from cortex_bot import Cortex
 
 run_object = Run()
 cortex_object = Cortex()
-incoming_WH_link = <MATTERMOST_INCOMING_WEBHOOK_URL>
+incoming_WH_link = "<MATTERMOST_INCOMING_WEBHOOK_URL>"
 
 # Method to manage multiple jobs
 def multiple_run(analyzers_ls, dataType, data, tlp, forceFlag, query_user):
