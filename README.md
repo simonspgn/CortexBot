@@ -1,5 +1,6 @@
 # Cortex Bot
-Cortex Bot is a Mattermost integration that allowd you to query Cortex requests and run jobs directly from the Mattermost Interface. It is used by calling the ´/cortex´ command from Mattermost's chat window. 
+Cortex Bot is simple python script that allows you to integrate Cortex in a Mattermost instance. With it, you can query Cortex requests and run jobs directly from the Mattermost Interface. It is used by calling the ´/cortex´ command from Mattermost's chat window. 
+
 # Features
 With Cortex Bot you can:
  - Find all enabled analyzers
