@@ -1,1 +1,2 @@
 # Usage
+![](../images/cortexBotGraph.png)
