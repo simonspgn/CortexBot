@@ -160,7 +160,7 @@ def run(resp, query_user):
             else:
                 (data_type_query,data,tlp)=run_object.getArgs(resp)
             # Run analyzer - To run the analyzer, a subprocess will be created by calling cortex_bot_helper.py
-            args_ls = ["python3.6","cortex_bot_helper.py",analyzer_name,data_type_query,data,str(tlp),str(flag),query_user]
+            args_ls = ["python3.6","cortex_bot_push.py",analyzer_name,data_type_query,data,str(tlp),str(flag),query_user]
             return run_object.callSubProcess(args_ls)
         except:
             return ":pig: Oops, something went wrong. You probably don't have enough arguments or something is wrong in your data type or in your data arguments. Check `/cortex help run` for more details\n"
@@ -173,7 +173,7 @@ def run(resp, query_user):
             # If they are valid, set the arguments variables.
             else:
                 (data_type_query,data,tlp)=run_object.getArgs(resp)
-            args_ls = ["python3.6","cortex_bot_helper.py","multiple",data_type_query,data,str(tlp),str(flag),query_user]
+            args_ls = ["python3.6","cortex_bot_push.py","multiple",data_type_query,data,str(tlp),str(flag),query_user]
             return run_object.callSubProcess(args_ls)
         except:
             return ":pig: Oops, something went wrong. You probably don't have enough arguments or something is wrong in your data type or in your data arguments. Check `/cortex help run` for more details\n"
