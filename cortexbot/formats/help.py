@@ -29,9 +29,9 @@ class Help():
     # Run help menu
     def runHelp(self,link):
         # Simple markdown print output for help run menu
-        response="## :globe_with_meridians: **Welcome to Cortex Bot's Run Menu**\n\n|**Description**|**Command**|\n|:--------|:------|\n \
-             |To run a job| `/cortex run [analyzer name] [Data Type] [Data]` | \n \
-             |To run a job with a specific TLP| `/cortex run [analyzer name] [Data Type] [Data] [TLP_Color]` | \n\n"
+        response="## :globe_with_meridians: **Welcome to Cortex Bot's Run Menu**\n\n|**Description**|**Command**|\n|:--------|:------|\n"
+        response+= "|To run a job| `/cortex run [analyzer name] [Data Type] [Data]` | \n"
+        response+= "|To run a job with a specific TLP| `/cortex run [analyzer name] [Data Type] [Data] [TLP_Color]` | \n\n"
         response+="---\n"
         response+="#### :bangbang: Certain Things to Keep in Mind\n"
         response+="* If no TLP is specified, Cortex will run the job with TLP 2 (amber)\n"
