@@ -28,18 +28,18 @@ class Analyzer:
         # Note: Some of the analyzers features are not properly defined in analyze.py module.
         # Converting the analyzer model to json allows to get further infomation.
         analyzer_json=json.loads(str(analyzer))
-        response="|Parameter|Value|\n|:------|:------|\n \
-          |Name|"+analyzer.name+"|\n \
-          |Base Config|"+analyzer.baseConfig+"|\n \
-          |Description|"+analyzer.description+"|\n \
-          |Data Types|"+', '.join(analyzer.dataTypeList)+"|\n \
-          |ID|"+analyzer.id+"|\n \
-          |Version|"+analyzer.version+"|\n \
-          |Max TLP|" + str(analyzer_json['maxTlp']) +"|\n \
-          |Max Pap|" + str(analyzer_json['maxPap']) +"|\n \
-          |Author|"+analyzer.author+"|\n \
-          |URL|"+analyzer.url+"|\n \
-          |License|"+analyzer.license+"|\n \
-          |Created By|"+analyzer.createdBy+"|\n \
-          |Created At|"+str(analyzer_json['createdAt'])+"\n"
+        response="|Parameter|Value|\n|:------|:------|\n"
+        response+= "|Name|"+analyzer.name+"|\n"
+        response+= "|Base Config|"+analyzer.baseConfig+"|\n"
+        response+= "|Description|"+analyzer.description+"|\n"
+        response+= "|Data Types|"+', '.join(analyzer.dataTypeList)+"|\n"
+        response+= "|ID|"+analyzer.id+"|\n"
+        response+= "|Version|"+analyzer.version+"|\n"
+        response+= "|Max TLP|" + str(analyzer_json['maxTlp']) +"|\n"
+        response+= "|Max Pap|" + str(analyzer_json['maxPap']) +"|\n"
+        response+= "|Author|"+analyzer.author+"|\n"
+        response+= "|URL|"+analyzer.url+"|\n"
+        response+= "|License|"+analyzer.license+"|\n"
+        response+= "|Created By|"+analyzer.createdBy+"|\n"
+        response+= "|Created At|"+str(analyzer_json['createdAt'])+"\n"
         return response
