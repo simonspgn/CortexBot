@@ -97,4 +97,8 @@ If you encounter issues running your bot, refer to the Mattermost log files unde
 
 Voila, your cortex bot is now configured and should be ready to go!
 
+# License
+
+
+# Thanks
 
