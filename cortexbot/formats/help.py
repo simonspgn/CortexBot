@@ -4,16 +4,16 @@ class Help():
     # Main help menu
     def mainHelp(self,link):
         # Simple markdown print output
-        response="## :question: Welcome to Cortex Bot's Help Menu\n\n|**Description**|**Command**|\n|:--------|:------|\n \
-            |For all enabled analyzers| `/cortex analyzers`|\n \
-            |For more information on one specific analyzer| `/cortex analyzers [analyzer_name]`|\n \
-            |If you are looking for analyzers supporting a certain data type*| `/cortex analyzers [data_type]`\n \
-            |For all existing jobs| `/cortex jobs`|\n \
-            |For all existing jobs belonging to a specific analyzer| `/cortex jobs [analyzer_name]`|\n \
-            |For more information on one specific job| `/cortex jobs [job_id]`|\n \
-            |If you are looking for all jobs ran on a specific data type*| `/cortex jobs [data_type]`|\n \
-            |For a job's report| `/cortex jobs report [job_id]`|\n \
-            |For a job's artifacts| `/cortex jobs artifacts [job_id]`|\n"
+        response="## :question: Welcome to Cortex Bot's Help Menu\n\n|**Description**|**Command**|\n|:--------|:------|\n"
+        response+= "|For all enabled analyzers| `/cortex analyzers`|\n"
+        response+= "|For more information on one specific analyzer| `/cortex analyzers [analyzer_name]`|\n"
+        response+= "|If you are looking for analyzers supporting a certain data type*| `/cortex analyzers [data_type]`\n"
+        response+= "|For all existing jobs| `/cortex jobs`|\n"
+        response+= "|For all existing jobs belonging to a specific analyzer| `/cortex jobs [analyzer_name]`|\n"
+        response+= "|For more information on one specific job| `/cortex jobs [job_id]`|\n"
+        response+= "|If you are looking for all jobs ran on a specific data type*| `/cortex jobs [data_type]`|\n"
+        response+= "|For a job's report| `/cortex jobs report [job_id]`|\n"
+        response+= "|For a job's artifacts| `/cortex jobs artifacts [job_id]`|\n"
         response+="*Available data types: domain, ip, url, fqdn, uri_path, user-agent, hash, email, mail, mail_subject, registry, regexp, other, filename\n\n"
         response+="---\n"
         response+=":mega: **NOTE**: If you want to share an output to the whole channel, add `all` at the end of the `/cortex` command. By default, each query is only visible to you.\n"
