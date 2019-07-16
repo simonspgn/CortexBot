@@ -8,7 +8,7 @@ import json
 import cgi
 from formats import *
 
-# Change API and TOKEN
+# Change API and CORTEX API KEY
 api = Api('<CORTEX_INSTANCE_URL>','<CORTEX_BOT_USER_API_KEY>')
 # Link of the Cortex Instance
 link = "<CORTEX_INSTANCE_URL>"
