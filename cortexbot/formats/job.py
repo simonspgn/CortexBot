@@ -91,18 +91,19 @@ class Job:
     # Generates Markdown table for Job ID
     def formatJobId(self,job):
         job_json = json.loads(str(job))
-        return "|Parameter|Value|\n|:------|:------|\n \
-                    |Status|"+self.getJobStatus(job)+"|\n \
-                    |Job ID|"+job.id+"|\n \
-                    |Data Type|"+job.dataType+"|\n \
-                    |Data|"+job.data+"|\n \
-                    |PAP|"+str(job_json['pap'])+"\n \
-                    |TLP|"+str(job_json['tlp'])+"\n \
-                    |Created By|"+job_json['createdBy']+"|\n \
-                    |Created At|"+str(job_json['createdAt'])+"|\n \
-                    |Analyzer Name|"+job.analyzerName+"|\n \
-                    |Analyzer ID|"+job.analyzerId+"|\n \
-                    |Organization|"+job.organization+"|\n"
+        response = "|Parameter|Value|\n|:------|:------|\n"
+        response += "|Status|"+self.getJobStatus(job)+"|\n"
+        response += "|Job ID|"+job.id+"|\n"
+        response += "|Data Type|"+job.dataType+"|\n"
+        response += "|Data|"+job.data+"|\n"
+        response += "|PAP|"+str(job_json['pap'])+"\n"
+        response += "|TLP|"+str(job_json['tlp'])+"\n"
+        response += "|Created By|"+job_json['createdBy']+"|\n"
+        response += "|Created At|"+str(job_json['createdAt'])+"|\n"
+        response += "|Analyzer Name|"+job.analyzerName+"|\n"
+        response += "|Analyzer ID|"+job.analyzerId+"|\n"
+        response += "|Organization|"+job.organization+"|\n"
+        return response
 
     # Specific printing formatting
     def addStartDate(self, job):
