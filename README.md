@@ -24,9 +24,69 @@ All this from your Mattermost instance!
 
 # Set Up
 
-For the correct set up of Cortex Bot, it is crucial that httpd is installed and running. The scripts are written in python3 and communicate with Cortex instances via cortex4py. In order to execute the scripts from cgi, the python Apache Server module mod_wsgi is required. This will provide a WSGI inteface for Python and and allows the integration with cgi. Both cortex_bot.py and cortex_bot_helper.py should be placed in cgi-bin directory under /var/www/cgi-bin. Note that cortex_bot.py will need execute privileges. Once the aforementioned configurations and installations are done, proceed by placing both cortex_bot.py and cortex_bot_helper.py in the /var/www/cgi-bin directory. 
+For the correct set up of Cortex Bot, it is crucial that httpd is installed and running. The scripts are written in python3 and communicate with Cortex instances via cortex4py. In order to execute the scripts from cgi, the python Apache Server module mod_wsgi is required. This will provide a WSGI inteface for Python and and allows the integration with cgi. Both cortex_bot.py and cortex_bot_helper.py should be placed in cgi-bin directory under /var/www/cgi-bin. Note that cortex_bot.py will need execute privileges. Once the aforementioned configurations and installations are done, proceed by placing cortex_bot.py, cortex_bot_helper.py and the formats directory in /var/www/cgi-bin. 
 
-**Note**: cortex_bot.py will need execute privileges (chmod to 705 is the minimum required).
+**:heavy_exclamation_mark: Note**: cortex_bot.py will need execute privileges (chmod to 705 is the minimum required).
 
+## Mattermost Configuration
+
+**:heavy_exclamation_mark: Note**: You will need admin privileges in your Mattermost instance to perform the following configurations. 
+
+**1. Add a new custom slash command**
+
+Under Integrations/Slash Command, add a new custom slash command and input the following:
+ 
+* Command Trigger Word: cortex
+* request url: http://<ADDRESS_WHERE_APACHE_IS_RUNNING>/cgi-bin/cortex_bot.py
+* request method: GET
+* response icon + autocomplete are optional
+
+You will be given a token once the slash command is configured.
+
+**2. Create a new BOT USER and add a new incoming web**
+
+Create a new Bot user in mattermost. Mattermost provides ways for creating Bot users. However, I suggest that you simply create a new normal user account that will only be used by the Cortex Bot. When this is done, log in to the Bot User's account and create an incoming webhook.
+Under Integrations/Incoming Webhooks, add a new webhook. Mattermost should then confirm your configuration by providing a URL. Creating a webhook via your Bot User's account has the advantage that, whenever a normal user will run a job later on, incoming webhooks are automatically going to be linked between the user and the bot. 
+
+You might need to add an exception for untrusted internal connections. To do so, go to System Console/Advanced/Developer/Allow untrusted internal connections and add your cortex instance and/or the apache server on which you have placed the cortex bot files.
+
+## Cortex Configuration
+
+Log in your cortex instance and add a new user. This user will have as a purpose to handle communications between mattermost and cortex. When the user is created, generate an API key.
+
+**3. Update the personal information in the code**
+
+Now that Cortex and Mattermost are both configured, you can change the private information in the code.
+
+* In cortex_bot.py and in cortex_bot_helper.py:
+
+Add your cortex instance URL and your cortex user API key in the following line:
+```
+api = Api('<CORTEX_INSTANCE_URL>','<CORTEX_BOT_USER_API_KEY>')
+```
+
+Add your cortex instance URL in the following line: 
+```
+link = "<CORTEX_INSTANCE_URL>"
+```
+
+* In cortex_bot.py
+
+Add your custom slash command token in the following line:
+```
+token = "<MATTERMOST TOKEN>"
+```
+
+* In cortex_bot_helper.py:
+
+Add incoming webhook generated url in the following line:
+```
+incoming_WH_link = "<MATTERMOST_INCOMING_WEBHOOK_URL>"
+```
+
+
+If you encounter issues running your bot, refer to the Mattermost log files under System Console/logs or see the mattermost [documentation](https://docs.mattermost.com/)
+
+Voila, your cortex bot is now configured and should be ready to go!
 
 
