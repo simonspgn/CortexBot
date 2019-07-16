@@ -45,11 +45,12 @@ class Run:
         job_json = json.loads(str(job))
         cache = job_json.get("fromCache","")
         if cache != "":
-            return "|From Cache|"+str(job_json['fromCache'])+"|\n \
-                       |Start Date|"+ str(job_json['startDate'])+"|\n\n"
+            response = "|From Cache|"+str(job_json['fromCache'])+"|\n"
+            response+= "|Start Date|"+ str(job_json['startDate'])+"|\n\n"
         else:
-            return "|From Cache|False|\n \
-                       |Start Date|N/A|\n\n"
+            response = "|From Cache|False|\n"
+            response+= "|Start Date|N/A|\n\n"
+        return response
 
     # Main run formating response method.
     def formatRunResponse(self, job):
