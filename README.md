@@ -28,7 +28,9 @@ For the correct set up of Cortex Bot, it is crucial that httpd is installed and 
 
 **:heavy_exclamation_mark: Note**: cortex_bot.py will need execute privileges (chmod to 705 is the minimum required).
 
+
 ## Mattermost Configuration
+
 
 **:heavy_exclamation_mark: Note**: You will need admin privileges in your Mattermost instance to perform the following configurations. 
 
@@ -48,13 +50,17 @@ You will be given a token once the slash command is configured.
 Create a new Bot user in mattermost. Mattermost provides ways for creating Bot users. However, I suggest that you simply create a new normal user account that will only be used by the Cortex Bot. When this is done, log in to the Bot User's account and create an incoming webhook.
 Under Integrations/Incoming Webhooks, add a new webhook. Mattermost should then confirm your configuration by providing a URL. Creating a webhook via your Bot User's account has the advantage that, whenever a normal user will run a job later on, incoming webhooks are automatically going to be linked between the user and the bot. 
 
-You might need to add an exception for untrusted internal connections. To do so, go to System Console/Advanced/Developer/Allow untrusted internal connections and add your cortex instance and/or the apache server on which you have placed the cortex bot files.
+You might need to add an exception for untrusted internal connections in Mattermost. To do so, go to System Console/Advanced/Developer/Allow untrusted internal connections and add your cortex instance and/or the apache server on which you have placed the cortex bot files.
+
 
 ## Cortex Configuration
 
+
 Log in your cortex instance and add a new user. This user will have as a purpose to handle communications between mattermost and cortex. When the user is created, generate an API key.
 
-**3. Update the personal information in the code**
+
+## Code Configuration
+
 
 Now that Cortex and Mattermost are both configured, you can change the private information in the code.
 
