@@ -26,9 +26,9 @@ All this from your Mattermost instance!
 
 # Set Up
 
-For the correct set up of Cortex Bot, it is crucial that httpd is installed and running. The scripts are written in python3 and communicate with Cortex instances via cortex4py. In order to execute the scripts from cgi, the python Apache Server module mod_wsgi is required. This will provide a WSGI inteface for Python and and allows the integration with cgi. Both cortex_bot.py and cortex_bot_helper.py should be placed in cgi-bin directory under /var/www/cgi-bin. Note that cortex_bot.py will need execute privileges. Once the aforementioned configurations and installations are done, proceed by placing cortex_bot.py, cortex_bot_helper.py and the formats directory in /var/www/cgi-bin. 
+For the correct set up of Cortex Bot, it is crucial that httpd is installed and running. The scripts are written in python3 and communicate with Cortex instances via cortex4py. In order to execute the scripts from cgi, the python Apache Server module mod_wsgi is required. This will provide a WSGI inteface for Python and and allows the integration with cgi. Once the aforementioned configurations and installations are done, proceed by placing cortex_bot_cgi.py, cortex_bot_push.py and the formats directory in /var/www/cgi-bin. 
 
-**:heavy_exclamation_mark: Note**: cortex_bot.py will need execute privileges (chmod to 705 is the minimum required).
+**:heavy_exclamation_mark: Note**: cortex_bot_cgi.py will need execute privileges (chmod to 705 is the minimum required).
 
 
 ## Mattermost Configuration
@@ -41,7 +41,7 @@ For the correct set up of Cortex Bot, it is crucial that httpd is installed and 
 Under Integrations/Slash Command, add a new custom slash command and input the following:
  
 * Command Trigger Word: cortex
-* request url: http://<ADDRESS_WHERE_APACHE_IS_RUNNING>/cgi-bin/cortex_bot.py
+* request url: http://<ADDRESS_WHERE_APACHE_IS_RUNNING>/cgi-bin/cortex_bot_cgi.py
 * request method: GET
 * response icon + autocomplete are optional
 
@@ -66,7 +66,7 @@ Log in your cortex instance and add a new user. This user will have as a purpose
 
 Now that Cortex and Mattermost are both configured, you can change the private information in the code.
 
-* In cortex_bot.py and in cortex_bot_helper.py:
+* In cortex_bot_cgi.py and in cortex_bot_push.py:
 
 Add your cortex instance URL and your cortex user API key in the following line:
 ```
@@ -78,14 +78,14 @@ Add your cortex instance URL in the following line:
 link = "<CORTEX_INSTANCE_URL>"
 ```
 
-* In cortex_bot.py
+* In cortex_bot_cgi.py
 
 Add your custom slash command token in the following line:
 ```
 token = "<MATTERMOST TOKEN>"
 ```
 
-* In cortex_bot_helper.py:
+* In cortex_bot_push.py:
 
 Add incoming webhook generated url in the following line:
 ```
