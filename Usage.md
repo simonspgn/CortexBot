@@ -34,6 +34,7 @@ For example, if the user wants to find information on all enabled analyzers that
 ```
 /cortex analyzers ip
 ```
+![](images/analyzer.PNG)
 
 ## Jobs
 
@@ -52,14 +53,11 @@ You can also access jobs summary of reports and artifacts. For instance, to get 
 ```
 /cortex jobs report <job_id>
 ```
-The response will look similar to this
-
-
 ![](images/jobReport.PNG)
 
 ## Run
 
-Lastly, Cortex Bot allows you to run jobs from the Mattermost interface. You can either run a single job by giving the analyzer name, or you can run all enabled analyzers that can run on a specific data type by inputting *.
+Lastly, Cortex Bot allows you to run jobs from the Mattermost interface. You can either run a single job by giving the analyzer name, or you can run all enabled analyzers that can run on a specific data type.
 
 When you run an analyzer, Cortex Bot will tell you that the job is being processed. Whenever the job is done, the bot will send a private message with a summary of the finished job, to the user who ran it. The jobs are not run directly by the Bot. They are run as a detached process in the background. This setting allows you to continue using mattermost for other tasks while your jobs are being run. Consequently, if you run jobs on 20 different analyzers, you will not have to wait for the jobs to finish to continue using Mattermost. Rather, the bot will send you a private message with the reports of all your jobs once they are finished. For example, if you run the a job with the analyzer PassiveTotal_Unique_Resolution_2_0 on the ip address 8.8.8.8, with TLP amber, the query would be
 ```
