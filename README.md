@@ -1,5 +1,5 @@
 # Cortex Bot
-Cortex Bot is simple python script that allows you to integrate Cortex in a Mattermost instance. With it, you can query Cortex requests and run jobs directly from your Mattermost interface. It is used by calling the ´/cortex´ command from Mattermost's chat window. 
+Cortex Bot is python script that allows you to integrate Cortex in a Mattermost instance. With it, you can query Cortex requests and run jobs directly from your Mattermost interface. It is used by calling the ´/cortex´ command from Mattermost's chat window. 
 
 ![](images/help.PNG)
 
@@ -47,7 +47,7 @@ Under Integrations/Slash Command, add a new custom slash command and input the f
 
 You will be given a token once the slash command is configured.
 
-**2. Create a new BOT USER and add a new incoming web**
+**2. Create a new BOT USER and add a new incoming webhook**
 
 Create a new Bot user in mattermost. Mattermost provides ways for creating Bot users. However, I suggest that you simply create a new normal user account that will only be used by the Cortex Bot. When this is done, log in to the Bot User's account and create an incoming webhook.
 Under Integrations/Incoming Webhooks, add a new webhook. Mattermost should then confirm your configuration by providing a URL. Creating a webhook via your Bot User's account has the advantage that, whenever a normal user will run a job later on, incoming webhooks are automatically going to be linked between the user and the bot. 
@@ -101,4 +101,8 @@ Voila, your cortex bot is now configured and should be ready to go!
 
 
 # Thanks
+
+This bot was created during an internship at the Computer Security Incident Response Capability (CSIRC) of the European Commission. Many thanks to the whole team who made this work possible. 
+
+This bot relies solely on the open source standalone analysis engine [Cortex](https://github.com/TheHive-Project/Cortex) developped as an entity for [TheHive-Project](https://github.com/TheHive-Project). Many thanks to all the contributors and developpers of this fascinating tool.
 
