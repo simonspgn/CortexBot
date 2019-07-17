@@ -66,28 +66,28 @@ Log in your cortex instance and add a new user. This user will have as a purpose
 
 Now that Cortex and Mattermost are both configured, you can change the private information in the code.
 
-* In cortex_bot_cgi.py and in cortex_bot_push.py:
+* In cortex_bot_cgi.py and in cortex_bot_push.py
 
-Add your cortex instance URL and your cortex user API key in the following line:
+Add your cortex instance URL and your cortex user API key in the following line
 ```
 api = Api('<CORTEX_INSTANCE_URL>','<CORTEX_BOT_USER_API_KEY>')
 ```
 
-Add your cortex instance URL in the following line: 
+Add your cortex instance URL in the following line
 ```
 link = "<CORTEX_INSTANCE_URL>"
 ```
 
 * In cortex_bot_cgi.py
 
-Add your custom slash command token in the following line:
+Add your custom slash command token in the following line
 ```
 token = "<MATTERMOST TOKEN>"
 ```
 
 * In cortex_bot_push.py:
 
-Add incoming webhook generated url in the following line:
+Add incoming webhook generated url in the following line
 ```
 incoming_WH_link = "<MATTERMOST_INCOMING_WEBHOOK_URL>"
 ```
@@ -99,6 +99,7 @@ Voila, your cortex bot is now configured and should be ready to go!
 
 # License
 
+CortexBot is an open source free software released under the MIT License.  
 
 # Thanks
 
