@@ -23,6 +23,7 @@ All this from your Mattermost instance!
 - Python v3.5+
 - mod_wsgi Python v3.5+
 - Cortex4py (please refer to cortex4py [documentation](https://github.com/TheHive-Project/Cortex4py) for installation)
+- cURL command line tool
 
 # Set Up
 
