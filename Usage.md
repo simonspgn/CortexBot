@@ -16,11 +16,11 @@ Two help menus are accessible via the cortex bot. The basic help menu provides i
 ```
 ![](images/help.PNG)
 
-The second help menu can be accessed via the command
+The second help menu provides information regarding running Cortex jobs via Mattermost AND can be accessed via the command
 ```
 /cortex help run
 ```
-It provides information regarding running Cortex jobs via Mattermost
+![](images/helprun.PNG)
 
 ## Analyzers
 
@@ -55,17 +55,19 @@ You can also access jobs summary of reports and artifacts. For instance, to get 
 The response will look similar to this
 
 
+![](images/jobReport.PNG)
+
 ## Run
 
 Lastly, Cortex Bot allows you to run jobs from the Mattermost interface. You can either run a single job by giving the analyzer name, or you can run all enabled analyzers that can run on a specific data type by inputting *.
 
-When you run an analyzer, Cortex Bot will tell you that the job is being processed. Whenever the job is done, the bot will send a private message with a summary of the finished job, to the user who ran it. The jobs are not run directly by the Bot. They are run as a detached process in the background. This setting allows you to continue using mattermost for other tasks while your jobs are being run. Consequently, if you run jobs on 20 different analyzers, for will not have to wait for the jobs to finish to continue using Mattermost. Rather, the bot will send you a private message with the reports of all your jobs once they are finished. 
-For example, if you run the a job with the analyzer PassiveTotal_Unique_Resolution_2_0 on the ip address 8.8.8.8, with TLP amber, the query would be
+When you run an analyzer, Cortex Bot will tell you that the job is being processed. Whenever the job is done, the bot will send a private message with a summary of the finished job, to the user who ran it. The jobs are not run directly by the Bot. They are run as a detached process in the background. This setting allows you to continue using mattermost for other tasks while your jobs are being run. Consequently, if you run jobs on 20 different analyzers, you will not have to wait for the jobs to finish to continue using Mattermost. Rather, the bot will send you a private message with the reports of all your jobs once they are finished. For example, if you run the a job with the analyzer PassiveTotal_Unique_Resolution_2_0 on the ip address 8.8.8.8, with TLP amber, the query would be
 ```
 /cortex run PassiveTotal_Unique_Resolution_2_0 ip 8.8.8.8 amber 
 ```
 When the job is finished, the bot will send the following response as a private message to the user who ran the job
 
+![](images/job.PNG)
 
 To run all the analyzers that can take a specific data type, simply use * instead of the analyzer name. For instance, to run all the analyzers that can take ip data types, input the following
 
@@ -73,3 +75,6 @@ To run all the analyzers that can take a specific data type, simply use * instea
 /cortex run * ip 8.8.8.8 
 ```
 
+**:exclamation: Note**: By default, the TLP will be chosen to be amber. This can be changed by adding an additional argument stating which color the TLP should be (white, green, amber or red). In addition, you can also bypass the cache by typing "force" as a command argument. Otherwise, the bot will by default look for existing job in the cache. 
+
+Enjoy!
