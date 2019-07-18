@@ -73,6 +73,7 @@ To run all the analyzers that can take a specific data type, simply use * instea
 /cortex run * ip 8.8.8.8 
 ```
 
-**:exclamation: Note**: By default, the TLP will be chosen to be amber. This can be changed by adding an additional argument stating which color the TLP should be (white, green, amber or red). In addition, you can also bypass the cache by typing "force" as a command argument. Otherwise, the bot will by default look for existing job in the cache. 
+**:exclamation: Note**: By default, the TLP will be chosen to be amber. This can be changed by adding an additional argument stating which color the TLP should be (white, green, amber or red). In addition, you can also bypass the cache by typing "force" as a command argument. Otherwise, the bot will by default look for existing job in the cache. Lastly, a 15 mins timeout has been set for each job being run. This timeout can easily be changed in the code of the job.py file. 
+
 
 Enjoy!
